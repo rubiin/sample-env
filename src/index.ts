@@ -7,12 +7,12 @@ import { hideBin } from 'yargs/helpers'
 import pkg from '../package.json'
 import { splitLine } from './utils'
 
-interface IOptions {
+type Options = {
   env?: string
   sample?: string
 }
 
-const args = <IOptions>yargs(hideBin(process.argv))
+const args = <Options>yargs(hideBin(process.argv))
   .usage('Usage: $0 [options]')
   .help('help').alias('help', 'h')
   .version('version', pkg.version).alias('version', 'v')
@@ -35,14 +35,16 @@ const samplePath = args.sample || '.env.sample'
 
 const fileStream = fs.createWriteStream(samplePath)
 
-const rl = readline.createInterface({
+const reader = readline.createInterface({
   input: fs.createReadStream(envPath),
   crlfDelay: Infinity,
 })
 
-rl.on('line', (line) => {
+reader.on('line', (line) => {
   if (line.length === 0)
     fileStream.write('\n')
   else
     fileStream.write(`${splitLine(line)}\n`)
 })
+
+console.info('\x1b[32m%s\x1b[0m', `✅ Successfully generated file ${samplePath}`) 

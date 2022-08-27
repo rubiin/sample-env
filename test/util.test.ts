@@ -10,7 +10,7 @@ describe('splitLine', () => {
     expect(res).toEqual('FOO=')
   })
 
-  it('should not change line when the line is comment', () => {
+  it('should not change line when the line is a comment', () => {
     const res = splitLine(commentTest)
     expect(res).toEqual(commentTest)
   })
