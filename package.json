@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/rubiin/sample-env/issues"
   },
-  "keywords": [],
+  "keywords": ["cli", "env", "sample", "dotenv"],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -35,14 +35,16 @@
     "bin"
   ],
   "scripts": {
-    "build": "rimraf dist && unbuild",
-    "dev": "unbuild --stub",
+    "build": "rimraf dist && tsup",
     "lint": "eslint .",
     "prepublishOnly": "nr build",
     "release": "bumpp && pnpm publish",
     "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "yargs": "^17.5.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
@@ -57,12 +59,9 @@
     "esno": "^0.16.3",
     "pnpm": "^7.5.0",
     "rimraf": "^3.0.2",
+    "tsup": "^6.2.3",
     "typescript": "^4.7.4",
-    "unbuild": "^0.7.4",
     "vite": "^2.9.13",
     "vitest": "^0.17.0"
-  },
-  "dependencies": {
-    "yargs": "^17.5.1"
   }
 }
