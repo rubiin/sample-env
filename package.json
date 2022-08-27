@@ -1,7 +1,7 @@
 {
   "name": "sample-env",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "packageManager": "pnpm@7.4.0",
   "description": "Generate sample file from .env for your apps",
   "author": "Rubin ",
@@ -15,7 +15,12 @@
   "bugs": {
     "url": "https://github.com/rubiin/sample-env/issues"
   },
-  "keywords": ["cli", "env", "sample", "dotenv"],
+  "keywords": [
+    "cli",
+    "env",
+    "sample",
+    "dotenv"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
