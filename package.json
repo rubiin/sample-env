@@ -33,7 +33,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "sample-env": "./bin/sample-env.mjs"
+    "sample-env": "./bin/sample-env.js"
   },
   "files": [
     "dist",
