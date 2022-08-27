@@ -1,0 +1,68 @@
+{
+  "name": "sample-env",
+  "type": "module",
+  "version": "0.5.0",
+  "packageManager": "pnpm@7.4.0",
+  "description": "Generate sample file from .env for your apps",
+  "author": "Rubin ",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/rubiin",
+  "homepage": "https://github.com/rubiin/sample-env#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubiin/sample-env.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rubiin/sample-env/issues"
+  },
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "sample-env": "./bin/sample-env.mjs"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && pnpm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "@antfu/ni": "^0.16.3",
+    "@babel/types": "^7.18.7",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.0.1",
+    "@types/parse-gitignore": "^1.0.0",
+    "@types/yargs": "^17.0.11",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.19.0",
+    "esno": "^0.16.3",
+    "pnpm": "^7.5.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.4",
+    "unbuild": "^0.7.4",
+    "vite": "^2.9.13",
+    "vitest": "^0.17.0"
+  },
+  "dependencies": {
+    "yargs": "^17.5.1"
+  }
+}
