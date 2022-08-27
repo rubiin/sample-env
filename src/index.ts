@@ -4,8 +4,8 @@ import fs from 'fs'
 import readline from 'readline'
 import yargs from 'yargs/yargs'
 import { hideBin } from 'yargs/helpers'
-import { splitLine } from './utils'
 import pkg from '../package.json'
+import { splitLine } from './utils'
 
 interface IOptions {
   env?: string
@@ -18,7 +18,7 @@ const args = <IOptions>yargs(hideBin(process.argv))
   .version('version', pkg.version).alias('version', 'v')
   .options({
     env: {
-      description: '<filename> Input file name',
+      description: '<filename> input file name',
       requiresArg: true,
       required: false,
     },
