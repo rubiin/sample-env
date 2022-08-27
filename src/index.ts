@@ -5,6 +5,7 @@ import readline from 'readline'
 import yargs from 'yargs/yargs'
 import { hideBin } from 'yargs/helpers'
 import { splitLine } from './utils'
+import pkg from '../package.json'
 
 interface IOptions {
   env?: string
@@ -14,7 +15,7 @@ interface IOptions {
 const args = <IOptions>yargs(hideBin(process.argv))
   .usage('Usage: $0 [options]')
   .help('help').alias('help', 'h')
-  .version('version', '1.0.1').alias('version', 'v')
+  .version('version', pkg.version).alias('version', 'v')
   .options({
     env: {
       description: '<filename> Input file name',
