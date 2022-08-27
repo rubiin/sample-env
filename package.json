@@ -33,7 +33,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "case-police": "./bin/sample-env.mjs"
+    "sample-env": "./bin/sample-env.mjs"
   },
   "files": [
     "dist",
