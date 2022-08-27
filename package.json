@@ -42,7 +42,7 @@
   "scripts": {
     "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
-    "lint": "eslint .",
+    "lint": "eslint '{src,test}/**/*.ts' --cache --fix",
     "prepublishOnly": "nr build",
     "release": "bumpp && pnpm publish",
     "start": "esno src/index.ts",

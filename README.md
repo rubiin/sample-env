@@ -1,3 +1,7 @@
+<p align="center">
+<a href="https://img.shields.io/npm/v/sample-env"><img src="https://img.shields.io/npm/v/sample-env" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/package/sample-env"><img src="https://img.shields.io/npm/dm/sample-env" alt="NPM Downloads" /></a>
+  
 # sample-env
 
 
