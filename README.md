@@ -2,7 +2,7 @@
 
 Running sample-env will remove all secrets and only generate an env file with the following variables in your env
 
-```
+```sh
 
 ## Usage
 
@@ -12,7 +12,7 @@ Running sample-env will remove all secrets and only generate an env file with th
 
 - Add this to your scripts in package.json
 
-```
+``` sh
 "scripts": {
   "sample-env": "sample-env"
 },
