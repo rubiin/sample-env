@@ -25,22 +25,23 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.mjs"
     },
     "./*": "./*"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "sample-env": "./bin/sample-env.js"
+    "case-police": "./bin/sample-env.mjs"
   },
   "files": [
     "dist",
     "bin"
   ],
   "scripts": {
-    "build": "rimraf dist && tsup",
+    "build": "rimraf dist && unbuild",
+    "dev": "unbuild --stub",
     "lint": "eslint .",
     "prepublishOnly": "nr build",
     "release": "bumpp && pnpm publish",
@@ -64,8 +65,8 @@
     "esno": "^0.16.3",
     "pnpm": "^7.5.0",
     "rimraf": "^3.0.2",
-    "tsup": "^6.2.3",
     "typescript": "^4.7.4",
+    "unbuild": "^0.8.9",
     "vite": "^2.9.13",
     "vitest": "^0.17.0"
   }
