@@ -2,25 +2,29 @@
 
 Running sample-env will remove all secrets and only generate an env file with the following variables in your env
 
-```sh
+
 
 ## Usage
 
 - Install
 
-```npm i sample-env --save-dev```
+```sh
+npm i sample-env --save-dev
+```
 
 - Add this to your scripts in package.json
 
-``` sh
+```sh
 "scripts": {
   "sample-env": "sample-env"
-},
+}
 ```
 
 - Run as
 
-```npm run sample-env```
+```sh
+    npm run sample-env
+```
 
 ## API
 The command takes 2 optional flags.
@@ -28,4 +32,4 @@ The command takes 2 optional flags.
   * `--env .enviroment`
 
 * --sample (default .env-sample) - the filename to generate, like 
-  * `--sample .env-baseline`
+  * `--sample .env-awesome`
