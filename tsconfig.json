@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "ES2020",
     "module": "esnext",
     "lib": ["esnext"],
     "moduleResolution": "node",
@@ -9,6 +9,7 @@
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+     "removeComments": true
   }
 }

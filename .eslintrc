@@ -1,11 +1,11 @@
 {
   "extends": "@antfu",
-  "overrides": [
-    {
-      "files": "dict/*.json",
       "rules": {
-        "jsonc/sort-keys": "error"
+        "no-console": [
+          "error",
+          {
+            "allow": ["warn", "error", "info"]
+          }
+        ]
       }
-    }
-  ]
 }
