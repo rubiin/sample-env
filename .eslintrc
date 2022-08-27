@@ -4,7 +4,13 @@
     {
       "files": "dict/*.json",
       "rules": {
-        "jsonc/sort-keys": "error"
+        "jsonc/sort-keys": "error",
+        "no-console": [
+          "error",
+          {
+            "allow": ["warn", "error", "info"]
+          }
+        ]
       }
     }
   ]

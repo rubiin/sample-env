@@ -13,7 +13,7 @@ Running sample-env will remove all secrets and only generate an env file with th
 - Install
 
 ```sh
-npm i sample-env --save-dev
+npm i sample-env -g
 ```
 
 ## Usage
