@@ -5,7 +5,7 @@
 <a href="https://www.npmjs.com/package/sample-env"><img src="https://img.shields.io/npm/dm/sample-env" alt="NPM Downloads" /></a>
   
 # About
-
+Easily generate sample environment files for your projects.
 Running sample-env will remove all secrets and only generate an env file with the following variables in your env
 
 ## How to install
