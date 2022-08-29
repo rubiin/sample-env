@@ -1,12 +1,12 @@
 {
   "name": "sample-env",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packageManager": "pnpm@7.4.0",
   "description": "Generate sample file from .env for your apps",
   "author": "Rubin Bhandari <roobin.bhandari@gmail.com>",
-	"license": "MIT",
-	"readmeFilename": "README.md",
+  "license": "MIT",
+  "readmeFilename": "README.md",
   "funding": "https://github.com/sponsors/rubiin",
   "homepage": "https://github.com/rubiin/sample-env#readme",
   "repository": {
