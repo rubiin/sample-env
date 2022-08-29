@@ -10,6 +10,8 @@ import { splitLine } from './utils'
 interface Options {
   env?: string
   sample?: string
+  banner?: string
+  removeComments?: boolean
 }
 
 const args = <Options>yargs(hideBin(process.argv))
@@ -27,12 +29,22 @@ const args = <Options>yargs(hideBin(process.argv))
       requiresArg: true,
       required: false,
     },
+    banner: {
+      description: 'add banner to output file',
+      requiresArg: true,
+      required: false,
+    },
+    removeComments: {
+      description: 'removes comment from output file',
+      requiresArg: false,
+      required: false,
+      boolean: true,
+    },
   })
   .argv
 
 const envPath = args.env || '.env'
 const samplePath = args.sample || '.env.sample'
-
 const fileStream = fs.createWriteStream(samplePath)
 
 const reader = readline.createInterface({
@@ -40,9 +52,15 @@ const reader = readline.createInterface({
   crlfDelay: Infinity,
 })
 
+if (args.banner)
+  fileStream.write(`${args.banner}\n`)
+
 reader.on('line', (line) => {
   if (line.length === 0)
     fileStream.write('\n')
+  else if (line.startsWith('#') && args.removeComments)
+    fileStream.write('\n')
+
   else
     fileStream.write(`${splitLine(line)}\n`)
 })
