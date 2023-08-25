@@ -1,7 +1,7 @@
 {
   "name": "sample-env",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "packageManager": "pnpm@7.4.0",
   "description": "Generate sample file from .env for your apps",
   "author": "Rubin Bhandari <roobin.bhandari@gmail.com>",
@@ -53,12 +53,10 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.41.0",
     "@rubiin/eslint-config-typescript": "^1.0.18",
     "@rubiin/tsconfig": "^1.0.2",
     "@types/minimist": "^1.2.2",
     "@types/node": "^20.5.6",
-    "@types/parse-gitignore": "^1.0.0",
     "@types/yargs": "^17.0.24",
     "bumpp": "^9.2.0",
     "eslint": "^8.47.0",
