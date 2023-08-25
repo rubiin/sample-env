@@ -44,7 +44,7 @@
     "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint '{src,test}/**/*.ts' --cache --fix",
-    "prepublishOnly": "nr build",
+    "prepublishOnly": "npm run build",
     "release": "bumpp && pnpm publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
