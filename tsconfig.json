@@ -1,15 +1,15 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
+	"extends": "@rubiin/tsconfig",
+	"compilerOptions": {
+    "target": "ES2021",
     "module": "esnext",
     "lib": ["esnext"],
-    "moduleResolution": "node",
+		"baseUrl": "src",
+		"outDir": "dist",
     "esModuleInterop": true,
-    "strict": true,
-    "strictNullChecks": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-     "removeComments": true
-  }
+    "incremental": false
+	},
+	"include": ["test/**/*", "src/**/*",".eslintrc.cjs"],
+	"exclude": ["node_modules", "dist"],
 }
