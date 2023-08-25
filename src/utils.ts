@@ -1,9 +1,7 @@
 export const splitLine = (line: string) => {
-  const res = line.split('=')
+  const result = line.split("=");
 
-  if (res.length === 1)
-    return res[0]
-  else
-    return `${res[0]}=`
-}
-
+  if (result.length === 1)
+    return result[0];
+  return `${result[0]}=`;
+};
