@@ -1,7 +1,7 @@
 {
   "name": "sample-env",
   "type": "module",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "packageManager": "pnpm@7.4.0",
   "description": "Generate sample file from .env for your apps",
   "author": "Rubin Bhandari <roobin.bhandari@gmail.com>",
