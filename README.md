@@ -3,7 +3,7 @@
 <p align="center">
 <a href="https://www.npmjs.com/package/sample-env"><img src="https://img.shields.io/npm/v/sample-env" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/package/sample-env"><img src="https://img.shields.io/npm/dm/sample-env" alt="NPM Downloads" /></a>
-  
+
 # About
 Effortlessly create sample environment files tailored to your projects with ease.This cli streamlines the process by effortlessly generating environment files, ensuring all sensitive information is excluded saving you the hassle of manually scrubbing secrets
 
@@ -16,10 +16,19 @@ npm i sample-env -g
 ```
 
 ## Usage
-  
-  ```sh
-    sample-env
-  ```
+
+```sh
+sample-env --env .env --sample .env.example --banner "hello world" --removeComments
+```
+
+This command will:
+
+- take `.env` file
+- parse its keys and values
+- create banner text at the top of the file
+- remove all comments
+- dump all the keys and values into the `.env.example` file
+
 
 ## Supported arguments and commands
 The cli takes these optional flags.
@@ -33,7 +42,7 @@ The cli takes these optional flags.
   * `--removeComments`
 
 ## Help Usage
-  
-  ```sh
-  sample-env --help
+
+```sh
+sample-env --help
   ```
