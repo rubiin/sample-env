@@ -49,6 +49,13 @@ const allArguments = yargs(hideBin(process.argv))
   .alias("help", "h")
   .version("version", packageJson.version)
   .alias("version", "v")
+  .showHelpOnFail(true, "whoops, something went wrong! run with --help")
+  .command({
+    command: "*",
+    handler() {
+      yargs().showHelp();
+    },
+  })
   .options({
     env: {
       description: "<filename> input file name",
@@ -64,18 +71,21 @@ const allArguments = yargs(hideBin(process.argv))
       description: "add banner to output file",
       requiresArg: true,
       required: false,
+      alias: "b",
     },
     removeComments: {
       description: "removes comment from output file",
       requiresArg: false,
       required: false,
       boolean: true,
+      alias: "r",
     },
     prefix: {
       description:
         "List of string prefixes to use only certain env variables, could be an empty string to use all available variables.",
       requiresArg: true,
       required: false,
+      alias: "p",
     },
   }).argv as Options;
 
