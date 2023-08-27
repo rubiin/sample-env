@@ -18,7 +18,7 @@ npm i sample-env -g
 ## Usage
 
 ```sh
-sample-env --env .env --sample .env.example --banner "hello world" --removeComments
+sample-env --env .env --sample .env.example --banner "hello world" --removeComments --prefix REACT_APP_
 ```
 
 This command will:
@@ -26,6 +26,7 @@ This command will:
 - take `.env` file
 - parse its keys and values
 - create banner text at the top of the file
+- only include keys that start with `REACT_APP_`
 - remove all comments
 - dump all the keys and values into the `.env.example` file
 

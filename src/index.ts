@@ -98,10 +98,7 @@ export const main = () => {
   if (banner) fileStream.write(`${banner}\n`);
 
   reader.on("line", (line) => {
-    if (line.length === 0) {
-      fileStream.write("\n");
-    }
-    else if (line.startsWith("#") && removeComments) {
+    if ((line.length === 0 && !prefix) || (line.startsWith("#") && removeComments)) {
       fileStream.write("\n");
     }
     else {
