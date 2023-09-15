@@ -41,6 +41,8 @@ The cli takes these optional flags.
   * `--banner "hello world"`
 * --removeComments - use this option if you don't want to include comments in the file
   * `--removeComments`
+* --prefix - use this option if you want to include only keys that start with a certain prefix
+  * `--prefix REACT_APP_` or `--prefix REACT_APP_ --prefix GATSBY_`
 
 ## Help Usage
 

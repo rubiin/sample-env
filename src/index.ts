@@ -16,7 +16,7 @@ interface Options {
   removeComments?: boolean;
 }
 
-const defaultEnvironmentPath = `${homedir()}/.sample-env.rc`;
+const defaultEnvironmentPath = `${homedir()}/.envrc`;
 
 const writeCongfigFile = (data: Options) => {
   return fs.writeFileSync(
