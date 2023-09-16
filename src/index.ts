@@ -59,14 +59,16 @@ const allArguments = yargs(hideBin(process.argv))
   })
   .options({
     env: {
-      description: "<filename> input file name",
+      description: "input file name (default: .env)",
       requiresArg: true,
       required: false,
+      alias: "e",
     },
     sample: {
-      description: "<filename> output file name",
+      description: "output file name (default: .env.sample)",
       requiresArg: true,
       required: false,
+      alias: "s",
     },
     banner: {
       description: "add banner to output file",
@@ -75,7 +77,8 @@ const allArguments = yargs(hideBin(process.argv))
       alias: "b",
     },
     removeComments: {
-      description: "removes comment from output file",
+      description: `removes comment from output file
+      (default: false)`,
       requiresArg: false,
       required: false,
       boolean: true,
