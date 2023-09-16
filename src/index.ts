@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import { homedir } from "node:os";
 import readline from "node:readline";
+import path from "node:path";
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
 import packageJson from "../package.json";
@@ -38,7 +39,7 @@ const readCongfigFile = () => {
 
     return defaultConfig;
   }
-  const config = fs.readFileSync(defaultEnvironmentPath, "utf8");
+  const config = fs.readFileSync(path.resolve(defaultEnvironmentPath), "utf8");
 
   return JSON.parse(config) as Options;
 };
@@ -92,8 +93,13 @@ const allArguments = yargs(hideBin(process.argv))
 export const main = () => {
   const configFile = readCongfigFile();
 
-  const environmentPath = allArguments.env ?? configFile.env;
-  const samplePath = allArguments.sample ?? configFile.sample;
+  const environmentPath = path.resolve(allArguments.env ?? configFile.env);
+  if (!fs.existsSync(environmentPath)) {
+    console.error(`Config file not found at path: ${environmentPath}`);
+    process.exit(0);
+  }
+
+  const samplePath = path.resolve(allArguments.sample ?? configFile.sample);
   const fileStream = fs.createWriteStream(samplePath);
   const banner = allArguments.banner ?? configFile.banner;
   const removeComments
@@ -101,7 +107,7 @@ export const main = () => {
   const prefix = allArguments.prefix ?? configFile.prefix;
 
   const reader = readline.createInterface({
-    input: fs.createReadStream(environmentPath),
+    input: fs.createReadStream(path.resolve(environmentPath)),
     crlfDelay: Number.POSITIVE_INFINITY,
   });
 
@@ -119,7 +125,7 @@ export const main = () => {
 
   console.debug(
     "\u001B[32m%s\u001B[0m",
-    `✅ Successfully generated file ${samplePath}`,
+    `🚀 Successfully generated file at ${samplePath}`,
   );
 };
 
