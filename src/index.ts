@@ -104,7 +104,10 @@ export const main = () => {
   const banner = allArguments.banner ?? configFile.banner;
   const removeComments
     = allArguments.removeComments ?? configFile.removeComments;
-  const prefix = allArguments.prefix ?? configFile.prefix;
+  const prefix = allArguments?.prefix;
+
+  // convert comma separated prefix to array
+  const prefixArray = prefix && typeof prefix === "string" && prefix.includes(",") ? prefix.split(",") : prefix;
 
   const reader = readline.createInterface({
     input: fs.createReadStream(path.resolve(environmentPath)),
@@ -118,7 +121,8 @@ export const main = () => {
       fileStream.write("\n");
     }
     else {
-      if (prefix && !line.startsWith(prefix)) return;
+      // if prefix exists and the line doesn't has any prefix , write nothing
+      if (prefixArray && Array.isArray(prefixArray) && !prefixArray.some(element => line.startsWith(element))) return;
       fileStream.write(`${splitLine(line)}\n`);
     }
   });

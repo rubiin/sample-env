@@ -41,7 +41,7 @@
     "bin"
   ],
   "scripts": {
-    "build": "rimraf dist && unbuild",
+    "build": "unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint 'src/**/*.ts' --cache",
     "lint:fix": "eslint 'src/**/*.ts' --cache --fix",
@@ -62,7 +62,6 @@
     "bumpp": "^9.2.0",
     "eslint": "^8.49.0",
     "pnpm": "^8.7.5",
-    "rimraf": "^5.0.1",
     "typescript": "5.2.2",
     "unbuild": "^2.0.0",
     "vite": "^4.4.9",
