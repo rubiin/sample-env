@@ -6,6 +6,7 @@ import readline from "node:readline";
 import path from "node:path";
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
+import chalk from "chalk";
 import packageJson from "../package.json";
 import { splitLine } from "./utils";
 
@@ -51,12 +52,6 @@ const allArguments = yargs(hideBin(process.argv))
   .version("version", packageJson.version)
   .alias("version", "v")
   .showHelpOnFail(true, "whoops, something went wrong! run with --help")
-  .command({
-    command: "*",
-    handler() {
-      yargs().showHelp();
-    },
-  })
   .options({
     env: {
       description: "input file name (default: .env)",
@@ -86,7 +81,7 @@ const allArguments = yargs(hideBin(process.argv))
     },
     prefix: {
       description:
-        "List of string prefixes to use only certain env variables, could be an empty string to use all available variables.",
+        "List of string prefixes to use only certain env variables",
       requiresArg: true,
       required: false,
       alias: "p",
@@ -98,7 +93,7 @@ export const main = () => {
 
   const environmentPath = path.resolve(allArguments.env ?? configFile.env);
   if (!fs.existsSync(environmentPath)) {
-    console.error(`Config file not found at path: ${environmentPath}`);
+    console.error(chalk.red(`❌ Config file not found at path: ${environmentPath}!`));
     process.exit(0);
   }
 
@@ -131,8 +126,7 @@ export const main = () => {
   });
 
   console.debug(
-    "\u001B[32m%s\u001B[0m",
-    `🚀 Successfully generated file at ${samplePath}`,
+    chalk.blue("🚀 Successfully generated file at") + chalk.red(` ${samplePath}`),
   );
 };
 
