@@ -3,7 +3,7 @@
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
 import packageJson from "../package.json";
-import { writeSampleFile } from "utils";
+import { writeSampleFile } from "./utils";
 
 export interface Options {
   env?: string;

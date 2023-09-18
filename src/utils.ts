@@ -5,7 +5,7 @@ import fs from "node:fs";
 import process from "node:process";
 import { homedir } from "node:os";
 import chalk from "chalk";
-import type { Options } from "index";
+import type { Options } from "./index";
 
 export const defaultEnvironmentPath = `${homedir()}/.envrc`;
 
