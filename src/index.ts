@@ -3,9 +3,9 @@
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
 import packageJson from "../package.json";
-import { writeSampleFile } from "./utils";
+import { writeEnvironment } from "./utils";
 
-export interface Options {
+interface Options {
   env?: string;
   sample?: string;
   banner?: string;
@@ -19,16 +19,15 @@ const allArguments = yargs(hideBin(process.argv))
   .alias("help", "h")
   .version("version", packageJson.version)
   .alias("version", "v")
-  .showHelpOnFail(true, "whoops, something went wrong! run with --help")
   .options({
     env: {
-      description: "input file name (default: .env)",
+      description: "<filename> input file name",
       requiresArg: true,
       required: false,
       alias: "e",
     },
     sample: {
-      description: "output file name (default: .env.sample)",
+      description: "<filename> output file name",
       requiresArg: true,
       required: false,
       alias: "s",
@@ -40,15 +39,15 @@ const allArguments = yargs(hideBin(process.argv))
       alias: "b",
     },
     removeComments: {
-      description: `removes comment from output file
-      (default: false)`,
+      description: "removes comment from output file",
       requiresArg: false,
       required: false,
       boolean: true,
       alias: "r",
     },
     prefix: {
-      description: "List of string prefixes to use only certain env variables",
+      description:
+        "List of string prefixes to use only certain env variables, could be an empty string to use all available variables.",
       requiresArg: true,
       required: false,
       alias: "p",
@@ -56,7 +55,7 @@ const allArguments = yargs(hideBin(process.argv))
   }).argv as Options;
 
 export const main = () => {
-  writeSampleFile(allArguments);
+  writeEnvironment(allArguments);
 };
 
 main();
