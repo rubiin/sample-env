@@ -2,16 +2,17 @@ import fs from "node:fs";
 import { homedir } from "node:os";
 import readline from "node:readline";
 import path from "node:path";
+import process from "node:process";
 import chalk from "chalk";
 
 const defaultEnvironmentPath = `${homedir()}/.env.rc`;
 
 export interface Options {
-  env?: string;
-  sample?: string;
-  banner?: string;
-  prefix?: string;
-  removeComments?: boolean;
+  env?: string
+  sample?: string
+  banner?: string
+  prefix?: string
+  removeComments?: boolean
 }
 
 /**

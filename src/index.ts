@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 
+import process from "node:process";
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
 import packageJson from "../package.json";
