@@ -3,15 +3,8 @@
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
 import packageJson from "../package.json";
+import type { Options } from "./utils";
 import { writeEnvironment } from "./utils";
-
-interface Options {
-  env?: string;
-  sample?: string;
-  banner?: string;
-  prefix?: string;
-  removeComments?: boolean;
-}
 
 const allArguments = yargs(hideBin(process.argv))
   .usage("Usage: $0 [options]")

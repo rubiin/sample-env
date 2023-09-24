@@ -6,12 +6,11 @@ const commentTest = "# COMMENT";
 
 describe("splitLine", () => {
   it("should parse a line", () => {
-    const result = splitLine(lineTest);
-    expect(result).toEqual("FOO=");
+    expect(splitLine(lineTest)).toEqual("FOO=");
   });
 
   it("should not change line when the line is a comment", () => {
-    const result = splitLine(commentTest);
-    expect(result).toEqual(commentTest);
+    expect(splitLine(commentTest)).toEqual(commentTest);
   });
+  
 });

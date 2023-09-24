@@ -4,8 +4,9 @@
 <a href="https://www.npmjs.com/package/sample-env"><img src="https://img.shields.io/npm/v/sample-env" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/package/sample-env"><img src="https://img.shields.io/npm/dm/sample-env" alt="NPM Downloads" /></a>
 
-# About
-Effortlessly create sample environment files tailored to your projects with ease.This cli streamlines the process by effortlessly generating environment files, ensuring all sensitive information is excluded saving you the hassle of manually scrubbing secrets
+## About
+
+Effortlessly create sample environment files tailored to your projects with ease. This cli streamlines the process by effortlessly generating environment files, ensuring all sensitive information is excluded saving you the hassle of manually scrubbing secrets.
 
 ## How to install
 
@@ -33,9 +34,9 @@ This command will:
 
 ## Supported arguments and commands
 The cli takes these optional flags.
-* --env (default .env) - use this option if you want to use a different file name
+* --env (default `.env`) - use this option if you want to use a different file name
   * `--env .env.dev`
-* --sample (default .env.sample) - use this option if you want to use a output file name
+* --sample (default `.env.sample`) - use this option if you want to use a output file name
   * `--sample .env.example`
 * --banner - use this option if you want to add a custom banner text at start of file
   * `--banner "hello world"`
