@@ -4,16 +4,9 @@ import readline from "node:readline";
 import path from "node:path";
 import chalk from "chalk";
 
-export const splitLine = (line: string) => {
-  const result = line.split("=");
-
-  if (result.length === 1) return result[0];
-  return `${result[0]}=`;
-};
-
 const defaultEnvironmentPath = `${homedir()}/.env.rc`;
 
-interface Options {
+export interface Options {
   env?: string;
   sample?: string;
   banner?: string;
@@ -21,7 +14,43 @@ interface Options {
   removeComments?: boolean;
 }
 
-const readCongfigFile = () => {
+/**
+ * The function `splitLine` takes a string as input and splits it into two parts at the first
+ * occurrence of the "=" character, returning the first part followed by the "=" character if it
+ * exists.
+ * @param line - The `line` parameter is a string that represents a line of text.
+ * @returns The function `splitLine` returns a string. If the input `line` does not contain the
+ * character "=", it returns the input `line` as is. Otherwise, it returns the input `line` with the
+ * "=" character appended at the end.
+ */
+export const splitLine = (line: string) => {
+  const result = line.split("=");
+
+  if (result.length === 1) return result[0];
+  return `${result[0]}=`;
+};
+
+/**
+ * The function `readConfigFile` reads a JSON configuration file from the specified path and returns
+ * the parsed content as an `Options` object.
+ * @param path - The `path` parameter is a string that represents the file path of the
+ * configuration file that needs to be read.
+ * @returns a parsed JSON object as an Options type.
+ */
+export const readConfigFile = (path: string) => {
+  const config = fs.readFileSync(path, "utf8");
+
+  return JSON.parse(config) as Options;
+};
+
+/**
+ * The function `getDefaultConfigFile` checks if a default configuration file exists, and if not,
+ * creates one with default values and returns it.
+ * @returns The function `getDefaultConfigFile` returns the `defaultConfig` object if the
+ * `defaultEnvironmentPath` file does not exist. Otherwise, it returns the result of calling the
+ * `readConfigFile` function with the `defaultEnvironmentPath` as an argument.
+ */
+export const getDefaultConfigFile = () => {
   if (!fs.existsSync(defaultEnvironmentPath)) {
     const defaultConfig = {
       env: ".env",
@@ -37,13 +66,28 @@ const readCongfigFile = () => {
 
     return defaultConfig;
   }
-  const config = fs.readFileSync(defaultEnvironmentPath, "utf8");
-
-  return JSON.parse(config) as Options;
+  return readConfigFile(defaultEnvironmentPath);
 };
 
+/**
+ * The function checks if a configuration file exists and returns either the default configuration file
+ * or the contents of the existing file.
+ * @returns either the default config file or the contents of the existing config file.
+ */
+export const getCongfigFile = () => {
+  const configFileExists = fs.existsSync(path.resolve(".envrc"));
+  if (!configFileExists)
+    return getDefaultConfigFile();
+  return readConfigFile(defaultEnvironmentPath);
+};
+
+/**
+ * The `writeEnvironment` function reads a configuration file, filters out lines based on specified
+ * prefixes, and writes the remaining lines to a new file.
+ * @param allArguments - An object that contains all the arguments passed to the function.
+ */
 export const writeEnvironment = (allArguments: Options) => {
-  const configFile = readCongfigFile();
+  const configFile = getCongfigFile();
 
   const environmentPath = path.resolve(allArguments.env ?? configFile.env);
   if (!fs.existsSync(environmentPath)) {
