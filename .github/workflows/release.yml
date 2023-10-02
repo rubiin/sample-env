@@ -1,43 +1,25 @@
-name: Release
-
+name: NPM Publish
 on:
-  push:
-    tags:
-      - 'v*'
-
-jobs:
   release:
+    types: [created]
+jobs:
+  publish:
+    runs-on: ubuntu-20.04
     permissions:
+      contents: read
       id-token: write
-      contents: write
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-
-      - name: Set node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: pnpm
-          registry-url: 'https://registry.npmjs.org'
-
-      - run: npx changelogithub
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-      - name: Install Dependencies
-        run: pnpm i
-
-      - name: PNPM build
-        run: pnpm run build
-
-      - name: Publish to NPM
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          NPM_CONFIG_PROVENANCE: true
+    - name: Setup Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+        check-latest: true
+        registry-url: https://registry.npmjs.org/
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Install Dependencies
+      run: npm install
+    - name: Publish Package to NPM Registry
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
