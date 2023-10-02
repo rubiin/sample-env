@@ -3,7 +3,9 @@ import rubiin from "@rubiin/eslint-config";
 export default rubiin(
   {
     stylistic: true, // enable stylistic formatting rules
-    typescript: true, // enable typescript rules
+    typescript: {
+      tsconfigPath: "tsconfig.json",
+    }
   },
   {
     rules: {

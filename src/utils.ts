@@ -24,12 +24,13 @@ export interface Options {
  * character "=", it returns the input `line` as is. Otherwise, it returns the input `line` with the
  * "=" character appended at the end.
  */
-export const splitLine = (line: string) => {
+export function splitLine(line: string) {
   const result = line.split("=");
 
-  if (result.length === 1) return result[0];
+  if (result.length === 1)
+    return result[0];
   return `${result[0]}=`;
-};
+}
 
 /**
  * The function `readConfigFile` reads a JSON configuration file from the specified path and returns
@@ -38,11 +39,11 @@ export const splitLine = (line: string) => {
  * configuration file that needs to be read.
  * @returns a parsed JSON object as an Options type.
  */
-export const readConfigFile = (path: string) => {
+export function readConfigFile(path: string) {
   const config = fs.readFileSync(path, "utf8");
 
   return JSON.parse(config) as Options;
-};
+}
 
 /**
  * The function `getDefaultConfigFile` checks if a default configuration file exists, and if not,
@@ -51,7 +52,7 @@ export const readConfigFile = (path: string) => {
  * `defaultEnvironmentPath` file does not exist. Otherwise, it returns the result of calling the
  * `readConfigFile` function with the `defaultEnvironmentPath` as an argument.
  */
-export const getDefaultConfigFile = () => {
+export function getDefaultConfigFile() {
   if (!fs.existsSync(defaultEnvironmentPath)) {
     const defaultConfig = {
       env: ".env",
@@ -68,26 +69,26 @@ export const getDefaultConfigFile = () => {
     return defaultConfig;
   }
   return readConfigFile(defaultEnvironmentPath);
-};
+}
 
 /**
  * The function checks if a configuration file exists and returns either the default configuration file
  * or the contents of the existing file.
  * @returns either the default config file or the contents of the existing config file.
  */
-export const getCongfigFile = () => {
+export function getCongfigFile() {
   const configFileExists = fs.existsSync(path.resolve(".envrc"));
   if (!configFileExists)
     return getDefaultConfigFile();
   return readConfigFile(defaultEnvironmentPath);
-};
+}
 
 /**
  * The `writeEnvironment` function reads a configuration file, filters out lines based on specified
  * prefixes, and writes the remaining lines to a new file.
  * @param allArguments - An object that contains all the arguments passed to the function.
  */
-export const writeEnvironment = (allArguments: Options) => {
+export function writeEnvironment(allArguments: Options) {
   const configFile = getCongfigFile();
 
   const environmentPath = path.resolve(allArguments.env ?? configFile.env);
@@ -117,7 +118,8 @@ export const writeEnvironment = (allArguments: Options) => {
     crlfDelay: Number.POSITIVE_INFINITY,
   });
 
-  if (banner) fileStream.write(`${banner}\n`);
+  if (banner)
+    fileStream.write(`${banner}\n`);
 
   reader.on("line", (line) => {
     if (
@@ -142,4 +144,4 @@ export const writeEnvironment = (allArguments: Options) => {
     chalk.blue("🚀 Successfully generated file at:")
       + chalk.green(` ${samplePath}`),
   );
-};
+}
