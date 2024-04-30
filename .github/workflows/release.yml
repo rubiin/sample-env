@@ -15,7 +15,7 @@ jobs:
           node-version: 20.x
           cache: pnpm
 
-      - run: pnpm install --shamefully-hoist
+      - run: pnpm install --frozen-lockfile
       - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
