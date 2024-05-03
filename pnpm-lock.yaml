@@ -34,8 +34,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       pnpm:
-        specifier: ^8.15.7
-        version: 8.15.7
+        specifier: ^9.0.0
+        version: 9.0.6
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -1784,6 +1784,7 @@ packages:
 
   loupe@2.3.6:
     resolution: {integrity: sha512-RaPMZKiMy8/JruncMU5Bt6na1eftNoo++R4Y+N2FrxkDVTrGvcyzFTsaGif4QTeKESheMGegbhw6iUAq+5A8zA==}
+    deprecated: Please upgrade to 2.3.7 which fixes GHSA-4q6p-r6v2-jvc5
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
@@ -2068,9 +2069,9 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
 
-  pnpm@8.15.7:
-    resolution: {integrity: sha512-yFzSG22hAzIVaxyiqnnAph7nrS6wRTuIqymSienoypPmCRIyslwHy/YfbfdxKNnISeXJrG5EhU29IRxJ86Z63A==}
-    engines: {node: '>=16.14'}
+  pnpm@9.0.6:
+    resolution: {integrity: sha512-9thjEwlzIHy3ozbWtDmiQqJqyAaAd99TDWqGBpQZhT3B/+ZAKexZSpxQWjpBDRlkPIcKumd2Mw9c/dzxCpwWFw==}
+    engines: {node: '>=18.12'}
     hasBin: true
 
   postcss-selector-parser@6.0.16:
@@ -4820,7 +4821,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pnpm@8.15.7: {}
+  pnpm@9.0.6: {}
 
   postcss-selector-parser@6.0.16:
     dependencies:
