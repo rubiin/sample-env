@@ -20,7 +20,7 @@ devDependencies:
     specifier: ^1.2.5
     version: 1.2.5
   '@types/node':
-    specifier: ^20.12.7
+    specifier: ^20.12.8
     version: 20.12.8
   '@types/yargs':
     specifier: ^17.0.32
@@ -32,7 +32,7 @@ devDependencies:
     specifier: ^8.57.0
     version: 8.57.0
   pnpm:
-    specifier: ^8.15.7
+    specifier: ^8.15.8
     version: 8.15.8
   typescript:
     specifier: 5.4.5
@@ -41,7 +41,7 @@ devDependencies:
     specifier: ^2.0.0
     version: 2.0.0(typescript@5.4.5)
   vite:
-    specifier: ^5.0.0
+    specifier: ^5.2.11
     version: 5.2.11(@types/node@20.12.8)
   vitest:
     specifier: ^0.34.6
