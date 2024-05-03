@@ -28,8 +28,8 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         id: release
         with:
-          release-type: simple
-          package-name: ultimate-nest
+          release-type: node
+          package-name: sample-env
       - uses: actions/checkout@v4
       - name: tag stable versions
         if: ${{ steps.release.outputs.release_created }}
