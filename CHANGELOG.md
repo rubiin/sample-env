@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/rubiin/sample-env/compare/v2.0.4...v2.1.0) (2024-05-03)
+
+
+### Features
+
+* directory based config ([6cc3dd3](https://github.com/rubiin/sample-env/commit/6cc3dd34a8d9bb4c5f3828fe4adb9ed6ade89a7f))
+* eslint flat config ([d6d1a70](https://github.com/rubiin/sample-env/commit/d6d1a7098752a9ad1e10d9704e04655023e30ca1))
+
+
+### Bug Fixes
+
+* eslint chnages ([dedf6c2](https://github.com/rubiin/sample-env/commit/dedf6c2da0af466e841d6ae35c809078da5f64e9))
+
 ## [1.4.0](https://github.com/rubiin/sample-env/compare/v1.3.0...v1.4.0) (2024-04-30)
 
 
