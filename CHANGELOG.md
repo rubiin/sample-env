@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/rubiin/sample-env/compare/v2.1.0...v2.1.1) (2024-06-12)
+
+
+### Bug Fixes
+
+* Update ci.yml ([41bf88b](https://github.com/rubiin/sample-env/commit/41bf88befa14a0e6e1fce56c2943520e5e3c4e21))
+
 ## [2.1.0](https://github.com/rubiin/sample-env/compare/v2.0.4...v2.1.0) (2024-05-03)
 
 
