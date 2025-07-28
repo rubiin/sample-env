@@ -59,11 +59,11 @@
     "@types/node": "^22.16.5",
     "@types/yargs": "^17.0.33",
     "bumpp": "^10.2.0",
-    "eslint": "^9.31.0",
+    "eslint": "^9.32.0",
     "pnpm": "^10.13.1",
     "typescript": "5.8.3",
-    "unbuild": "^3.5.0",
-    "vite": "^7.0.5",
+    "unbuild": "^3.6.0",
+    "vite": "^7.0.6",
     "vitest": "^3.2.4"
   }
 }
