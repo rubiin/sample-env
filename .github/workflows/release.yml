@@ -12,7 +12,7 @@ jobs:
     - name: Setup Node.js 20
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 20.19.4
         check-latest: true
         registry-url: https://registry.npmjs.org/
     - name: Checkout Repository
