@@ -16,7 +16,7 @@ jobs:
         check-latest: true
         registry-url: https://registry.npmjs.org/
     - name: Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
     - name: Install Dependencies
       run: npm install
     - name: Publish Package to NPM Registry
