@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.2](https://github.com/rubiin/sample-env/compare/v2.1.1...v2.1.2) (2025-08-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency yargs to v18 ([18ab697](https://github.com/rubiin/sample-env/commit/18ab697ebce2bbe5152c2d077e3daa3fbbaa9b2d))
+* **deps:** update dependency yargs to v18 ([bb4ca54](https://github.com/rubiin/sample-env/commit/bb4ca54f00f9525ff3d79081a18f983606e37e1c))
+
 ## [2.1.1](https://github.com/rubiin/sample-env/compare/v2.1.0...v2.1.1) (2024-06-12)
 
 
