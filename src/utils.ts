@@ -3,7 +3,7 @@ import { homedir } from "node:os";
 import readline from "node:readline";
 import path from "node:path";
 import process from "node:process";
-import chalk from "chalk";
+
 
 const defaultEnvironmentPath = `${homedir()}/.env.rc`;
 
@@ -14,6 +14,7 @@ export interface Options {
   prefix?: string
   removeComments?: boolean
 }
+
 
 /**
  * The function `splitLine` takes a string as input and splits it into two parts at the first
@@ -76,7 +77,7 @@ export function getDefaultConfigFile() {
  * or the contents of the existing file.
  * @returns either the default config file or the contents of the existing config file.
  */
-export function getCongfigFile() {
+export function getConfigFile() {
   const configFileExists = fs.existsSync(path.resolve(".envrc"));
   if (!configFileExists)
     return getDefaultConfigFile();
@@ -89,18 +90,18 @@ export function getCongfigFile() {
  * @param allArguments - An object that contains all the arguments passed to the function.
  */
 export function writeEnvironment(allArguments: Options) {
-  const configFile = getCongfigFile();
+  const configFile = getConfigFile();
 
-  const environmentPath = path.resolve(allArguments.env ?? configFile.env);
+  const environmentPath = allArguments?.env ? path.resolve(allArguments.env) : path.resolve(configFile.env ?? "");
   if (!fs.existsSync(environmentPath)) {
     console.error(
-      chalk.red(`❌ Config file not found at path: ${environmentPath}`),
+      `❌ Config file not found at path: ${environmentPath}`,
     );
     // eslint-disable-next-line unicorn/no-process-exit
     process.exit(0);
   }
 
-  const samplePath = path.resolve(allArguments.sample ?? configFile.sample);
+  const samplePath = allArguments?.sample ? path.resolve(allArguments.sample) : path.resolve(configFile.sample ?? "");
   const banner = allArguments.banner ?? configFile.banner;
   const removeComments
     = allArguments.removeComments ?? configFile.removeComments;
@@ -141,7 +142,6 @@ export function writeEnvironment(allArguments: Options) {
   });
 
   console.debug(
-    chalk.blue("🚀 Successfully generated file at:")
-      + chalk.green(` ${samplePath}`),
+    `🚀 Successfully generated file at: ${samplePath}`,
   );
 }

@@ -53,16 +53,16 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "oxlint": "^1.15.0",
     "@rubiin/tsconfig": "^1.2.1",
     "@types/minimist": "^1.2.5",
     "@types/node": "^20.19.14",
     "@types/yargs": "^17.0.33",
-    "bumpp": "^9.11.1",
-    "pnpm": "^9.15.9",
-    "typescript": "5.5.4",
+    "bumpp": "^10.2.3",
+    "oxlint": "^1.15.0",
+    "pnpm": "^10.16.1",
+    "typescript": "^5.9.2",
     "unbuild": "^3.6.1",
-    "vite": "^5.4.20",
-    "vitest": "^2.1.9"
+    "vite": "^7.1.5",
+    "vitest": "^3.2.4"
   }
 }
