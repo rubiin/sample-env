@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.1.2](https://github.com/rubiin/sample-env/compare/v2.1.1...v2.1.2) (2025-09-15)
+
+
+### Bug Fixes
+
+* correct function name and remove chalk dependency ([047f68b](https://github.com/rubiin/sample-env/commit/047f68b7fb3091f15427e02a25be779f8d0af8db))
+* **deps:** update dependency yargs to v18 ([18ab697](https://github.com/rubiin/sample-env/commit/18ab697ebce2bbe5152c2d077e3daa3fbbaa9b2d))
+* **deps:** update dependency yargs to v18 ([bb4ca54](https://github.com/rubiin/sample-env/commit/bb4ca54f00f9525ff3d79081a18f983606e37e1c))
+* Implement code changes to enhance functionality and improve performance ([8561a7b](https://github.com/rubiin/sample-env/commit/8561a7b28a0eaa36cf71f76d72e1668c1722dfed))
+
 ## [2.1.1](https://github.com/rubiin/sample-env/compare/v2.1.0...v2.1.1) (2024-06-12)
 
 
