@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.3](https://github.com/rubiin/sample-env/compare/v2.1.2...v2.1.3) (2025-09-22)
+
+
+### Bug Fixes
+
+* correct function name and remove chalk dependency ([047f68b](https://github.com/rubiin/sample-env/commit/047f68b7fb3091f15427e02a25be779f8d0af8db))
+
 ## [2.1.2](https://github.com/rubiin/sample-env/compare/v2.1.1...v2.1.2) (2025-09-15)
 
 
