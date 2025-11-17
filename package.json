@@ -55,14 +55,14 @@
   "devDependencies": {
     "@rubiin/tsconfig": "^1.2.1",
     "@types/minimist": "^1.2.5",
-    "@types/node": "^24.10.0",
-    "@types/yargs": "^17.0.34",
+    "@types/node": "^24.10.1",
+    "@types/yargs": "^17.0.35",
     "bumpp": "^10.3.1",
-    "oxlint": "^1.26.0",
-    "pnpm": "^10.21.0",
+    "oxlint": "^1.28.0",
+    "pnpm": "^10.22.0",
     "typescript": "^5.9.3",
     "unbuild": "^3.6.1",
     "vite": "^7.2.2",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.9"
   }
 }
