@@ -4,8 +4,8 @@
     "target": "ES2022",
     "module": "esnext",
     "lib": ["esnext"],
-		"baseUrl": "src",
-		"outDir": "dist",
+	"baseUrl": "src",
+	"outDir": "dist",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "incremental": false
