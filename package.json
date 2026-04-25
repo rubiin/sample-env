@@ -1,37 +1,24 @@
 {
   "name": "sample-env",
-  "type": "module",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Generate sample file from .env for your apps",
-  "author": "Rubin Bhandari <roobin.bhandari@gmail.com>",
-  "license": "MIT",
-  "readmeFilename": "README.md",
-  "funding": "https://github.com/sponsors/rubiin",
+  "keywords": [
+    "cli",
+    "dotenv",
+    "env",
+    "sample"
+  ],
   "homepage": "https://github.com/rubiin/sample-env#readme",
+  "bugs": {
+    "url": "https://github.com/rubiin/sample-env/issues"
+  },
+  "license": "MIT",
+  "author": "Rubin Bhandari <roobin.bhandari@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rubiin/sample-env.git"
   },
-  "bugs": {
-    "url": "https://github.com/rubiin/sample-env/issues"
-  },
-  "keywords": [
-    "cli",
-    "env",
-    "sample",
-    "dotenv"
-  ],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
-    },
-    "./*": "./*"
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "funding": "https://github.com/sponsors/rubiin",
   "bin": {
     "sample-env": "./bin/sample-env.mjs"
   },
@@ -39,11 +26,24 @@
     "dist",
     "bin"
   ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
   "scripts": {
     "build": "unbuild",
     "dev": "unbuild --stub",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
+    "format": "oxlint",
     "prepublishOnly": "npm run build",
     "release": "bumpp && pnpm publish",
     "test": "vitest",
@@ -54,15 +54,15 @@
   },
   "devDependencies": {
     "@rubiin/tsconfig": "^1.2.1",
-    "@types/minimist": "^1.2.5",
     "@types/node": "^24.12.2",
     "@types/yargs": "^17.0.35",
     "bumpp": "^11.0.1",
-    "oxlint": "^1.59.0",
-    "pnpm": "^10.33.0",
-    "typescript": "^6.0.2",
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0",
+    "typescript": "^6.0.3",
     "unbuild": "^3.6.1",
-    "vite": "^8.0.8",
-    "vitest": "^4.1.4"
-  }
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5"
+  },
+  "readmeFilename": "README.md"
 }
