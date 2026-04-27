@@ -13,8 +13,8 @@ importers:
         version: 18.0.0
     devDependencies:
       '@rubiin/tsconfig':
-        specifier: ^1.2.1
-        version: 1.2.1
+        specifier: ^2.1.0
+        version: 2.1.0
       '@types/node':
         specifier: ^24.12.2
         version: 24.12.2
@@ -901,9 +901,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rubiin/tsconfig@1.2.1':
-    resolution: {integrity: sha512-4QYqQV2LSND5XqX5ZpAfuJQAQcknnJSbqIW2F5dtRe8YX/q6jgkyQ1D2sLt1JVDPsg2/Te2QVueShJM0Lc3RDA==}
-    engines: {node: '>=18'}
+  '@rubiin/tsconfig@2.1.0':
+    resolution: {integrity: sha512-PdVBgGwZLjrKNd36GfLa3vPAMuHVa74xMQq+jgKQMiMDPlZHwW0qT38CZ1bqGD3vDzSieTevGZgPPTOanMNaBw==}
+    engines: {node: '>=22'}
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
@@ -2314,7 +2314,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.50.1':
     optional: true
 
-  '@rubiin/tsconfig@1.2.1': {}
+  '@rubiin/tsconfig@2.1.0': {}
 
   '@standard-schema/spec@1.1.0': {}
 
