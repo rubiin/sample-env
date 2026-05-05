@@ -1,8 +1,7 @@
 {
 	"extends": "@rubiin/tsconfig/tsconfig.node.json",
 	"compilerOptions": {
-    "target": "ES2022",
-    "module": "nodenext",
+    "target": "esnext",
 	"outDir": "dist",
     "incremental": false
 	},
