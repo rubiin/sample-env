@@ -1,12 +1,12 @@
 {
-	"extends": "@rubiin/tsconfig/tsconfig.node.json",
-	"compilerOptions": {
-    "target": "esnext",
-	"module": "ESNext",
+  "extends": "@rubiin/tsconfig/tsconfig.json",
+  "compilerOptions": {
+  	"module": "ESNext",
     "moduleResolution": "Bundler",
-	"outDir": "dist",
-    "incremental": false,
-	},
-	"include": ["test/**/*", "src/**/*","eslint.config.js","build.config.ts"],
-	"exclude": ["node_modules", "dist"],
+    "target": "ESNext",
+    "types": ["node", "vitest/globals"],
+    "rootDir": "."
+  },
+  "include": ["src", "tests"],
+  "exclude": ["node_modules"]
 }
