@@ -2,8 +2,10 @@
 	"extends": "@rubiin/tsconfig/tsconfig.node.json",
 	"compilerOptions": {
     "target": "esnext",
+	"module": "ESNext",
+    "moduleResolution": "Bundler",
 	"outDir": "dist",
-    "incremental": false
+    "incremental": false,
 	},
 	"include": ["test/**/*", "src/**/*","eslint.config.js","build.config.ts"],
 	"exclude": ["node_modules", "dist"],
