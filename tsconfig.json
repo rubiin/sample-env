@@ -1,13 +1,9 @@
 {
-	"extends": "@rubiin/tsconfig",
+	"extends": "@rubiin/tsconfig/tsconfig.node.json",
 	"compilerOptions": {
     "target": "ES2022",
-    "module": "esnext",
-    "lib": ["esnext"],
-	"baseUrl": "src",
+    "module": "nodenext",
 	"outDir": "dist",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
     "incremental": false
 	},
 	"include": ["test/**/*", "src/**/*","eslint.config.js","build.config.ts"],
