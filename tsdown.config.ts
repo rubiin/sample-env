@@ -11,5 +11,5 @@ export default defineConfig({
   dts: true,
   clean: true,
   minify: true,
-  target: false,
+  exports: true
 })
