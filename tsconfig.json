@@ -1,7 +1,7 @@
 {
   "extends": "@rubiin/tsconfig/tsconfig.json",
   "compilerOptions": {
-  	"module": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "Bundler",
     "target": "ESNext",
     "types": ["node", "vitest/globals"],

@@ -12,5 +12,4 @@ describe("splitLine", () => {
   it("should not change line when the line is a comment", () => {
     expect(splitLine(commentTest)).toEqual(commentTest);
   });
-  
 });

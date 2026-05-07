@@ -4,17 +4,15 @@ import readline from "node:readline";
 import path from "node:path";
 import process from "node:process";
 
-
 const defaultEnvironmentPath = `${homedir()}/.env.rc`;
 
 export interface Options {
-  env?: string
-  sample?: string
-  banner?: string
-  prefix?: string
-  removeComments?: boolean
+  env?: string;
+  sample?: string;
+  banner?: string;
+  prefix?: string;
+  removeComments?: boolean;
 }
-
 
 /**
  * The function `splitLine` takes a string as input and splits it into two parts at the first
@@ -28,8 +26,7 @@ export interface Options {
 export function splitLine(line: string) {
   const result = line.split("=");
 
-  if (result.length === 1)
-    return result[0];
+  if (result.length === 1) return result[0];
   return `${result[0]}=`;
 }
 
@@ -62,10 +59,7 @@ export function getDefaultConfigFile() {
       removeComments: false,
     } as Options;
 
-    fs.writeFileSync(
-      defaultEnvironmentPath,
-      JSON.stringify(defaultConfig, undefined, 2),
-    );
+    fs.writeFileSync(defaultEnvironmentPath, JSON.stringify(defaultConfig, undefined, 2));
 
     return defaultConfig;
   }
@@ -79,8 +73,7 @@ export function getDefaultConfigFile() {
  */
 export function getConfigFile() {
   const configFileExists = fs.existsSync(path.resolve(".envrc"));
-  if (!configFileExists)
-    return getDefaultConfigFile();
+  if (!configFileExists) return getDefaultConfigFile();
   return readConfigFile(defaultEnvironmentPath);
 }
 
@@ -92,56 +85,48 @@ export function getConfigFile() {
 export function writeEnvironment(allArguments: Options) {
   const configFile = getConfigFile();
 
-  const environmentPath = allArguments?.env ? path.resolve(allArguments.env) : path.resolve(configFile.env ?? "");
+  const environmentPath = allArguments?.env
+    ? path.resolve(allArguments.env)
+    : path.resolve(configFile.env ?? "");
   if (!fs.existsSync(environmentPath)) {
-    console.error(
-      `❌ Config file not found at path: ${environmentPath}`,
-    );
+    console.error(`❌ Config file not found at path: ${environmentPath}`);
     // eslint-disable-next-line unicorn/no-process-exit
     process.exit(0);
   }
 
-  const samplePath = allArguments?.sample ? path.resolve(allArguments.sample) : path.resolve(configFile.sample ?? "");
+  const samplePath = allArguments?.sample
+    ? path.resolve(allArguments.sample)
+    : path.resolve(configFile.sample ?? "");
   const banner = allArguments.banner ?? configFile.banner;
-  const removeComments
-    = allArguments.removeComments ?? configFile.removeComments;
+  const removeComments = allArguments.removeComments ?? configFile.removeComments;
   const prefix = allArguments?.prefix;
   const fileStream = fs.createWriteStream(samplePath);
 
   // convert comma separated prefix to array
-  const prefixArray
-    = prefix && typeof prefix === "string" && prefix.includes(",")
-      ? prefix.split(",")
-      : prefix;
+  const prefixArray =
+    prefix && typeof prefix === "string" && prefix.includes(",") ? prefix.split(",") : prefix;
 
   const reader = readline.createInterface({
     input: fs.createReadStream(environmentPath),
     crlfDelay: Number.POSITIVE_INFINITY,
   });
 
-  if (banner)
-    fileStream.write(`${banner}\n`);
+  if (banner) fileStream.write(`${banner}\n`);
 
   reader.on("line", (line) => {
-    if (
-      (line.length === 0 && !prefix)
-      || (line.startsWith("#") && removeComments)
-    ) {
+    if ((line.length === 0 && !prefix) || (line.startsWith("#") && removeComments)) {
       fileStream.write("\n");
-    }
-    else {
+    } else {
       // if prefix exists and the line doesn't has any prefix , write nothing
       if (
-        prefixArray
-        && Array.isArray(prefixArray)
-        && !prefixArray.some(element => line.startsWith(element))
+        prefixArray &&
+        Array.isArray(prefixArray) &&
+        !prefixArray.some((element) => line.startsWith(element))
       )
         return;
       fileStream.write(`${splitLine(line)}\n`);
     }
   });
 
-  console.debug(
-    `🚀 Successfully generated file at: ${samplePath}`,
-  );
+  console.debug(`🚀 Successfully generated file at: ${samplePath}`);
 }

@@ -31,22 +31,23 @@ This command will:
 - remove all comments
 - dump all the keys and values into the `.env.example` file
 
-
 ## Supported arguments and commands
+
 The cli takes these optional flags.
-* --env (default `.env`) - use this option if you want to use a different file name
-  * `--env .env.dev`
-* --sample (default `.env.sample`) - use this option if you want to use a output file name
-  * `--sample .env.example`
-* --banner - use this option if you want to add a custom banner text at start of file
-  * `--banner "hello world"`
-* --removeComments - use this option if you don't want to include comments in the file
-  * `--removeComments`
-* --prefix - use this option if you want to include only keys that start with a certain prefix
-  * `--prefix REACT_APP_` or `--prefix REACT_APP_ --prefix GATSBY_`
+
+- --env (default `.env`) - use this option if you want to use a different file name
+  - `--env .env.dev`
+- --sample (default `.env.sample`) - use this option if you want to use a output file name
+  - `--sample .env.example`
+- --banner - use this option if you want to add a custom banner text at start of file
+  - `--banner "hello world"`
+- --removeComments - use this option if you don't want to include comments in the file
+  - `--removeComments`
+- --prefix - use this option if you want to include only keys that start with a certain prefix
+  - `--prefix REACT_APP_` or `--prefix REACT_APP_ --prefix GATSBY_`
 
 ## Help Usage
 
 ```sh
 sample-env --help
-  ```
+```
