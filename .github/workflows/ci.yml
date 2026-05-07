@@ -15,8 +15,10 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --shamefully-hoist
-      - run: pnpm build
+      - run: pnpm format:check
+      - run: pnpm lint
       - run: pnpm test
+      - run: pnpm build
 
   release:
     name: release
