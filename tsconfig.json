@@ -1,5 +1,5 @@
 {
-  "extends": "@rubiin/tsconfig/tsconfig.bundler.json",
+  "extends": "@rubiin/tsconfig/configs/tsconfig.bundler.json",
   "compilerOptions": {
     "types": ["node", "vitest/globals"],
     "rootDir": "."
