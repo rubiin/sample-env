@@ -53,13 +53,13 @@
   },
   "devDependencies": {
     "@rubiin/tsconfig": "^2.2.0",
-    "@types/node": "^24.12.4",
+    "@types/node": "^24.13.1",
     "@types/yargs": "^17.0.35",
-    "oxfmt": "^0.52.0",
-    "oxlint": "^1.67.0",
-    "tsdown": "^0.22.1",
+    "oxfmt": "^0.53.0",
+    "oxlint": "^1.68.0",
+    "tsdown": "^0.22.2",
     "typescript": "^6.0.3",
-    "vite": "^8.0.14",
-    "vitest": "^4.1.7"
+    "vite": "^8.0.16",
+    "vitest": "^4.1.8"
   }
 }
