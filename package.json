@@ -55,11 +55,11 @@
     "@rubiin/tsconfig": "^2.2.0",
     "@types/node": "^24.13.2",
     "@types/yargs": "^17.0.35",
-    "oxfmt": "^0.54.0",
-    "oxlint": "^1.69.0",
-    "tsdown": "^0.22.2",
+    "oxfmt": "^0.55.0",
+    "oxlint": "^1.70.0",
+    "tsdown": "^0.22.3",
     "typescript": "^6.0.3",
     "vite": "^8.0.16",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.9"
   }
 }
