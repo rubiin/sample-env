@@ -20,7 +20,7 @@
   },
   "funding": "https://github.com/sponsors/rubiin",
   "bin": {
-    "sample-env": "./bin/sample-env.mjs"
+    "sample-env": "./dist/index.mjs"
   },
   "files": [
     "dist",
@@ -49,17 +49,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "yargs": "^18.0.0"
+    "yargs": "^18.1.0"
   },
   "devDependencies": {
     "@rubiin/tsconfig": "^2.2.0",
     "@types/node": "^24.13.3",
     "@types/yargs": "^17.0.35",
-    "oxfmt": "^0.59.0",
-    "oxlint": "^1.74.0",
-    "tsdown": "^0.22.7",
+    "oxfmt": "^0.60.0",
+    "oxlint": "^1.75.0",
+    "tsdown": "^0.22.14",
     "typescript": "^7.0.2",
-    "vite": "^8.1.4",
+    "vite": "^8.1.5",
     "vitest": "^4.1.10"
   }
 }
