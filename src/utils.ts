@@ -23,10 +23,10 @@ export interface Options {
  * character "=", it returns the input `line` as is. Otherwise, it returns the input `line` with the
  * "=" character appended at the end.
  */
-export function splitLine(line: string) {
+export function splitLine(line: string): string {
   const result = line.split("=");
 
-  if (result.length === 1) return result[0];
+  if (result.length === 1) return line;
   return `${result[0]}=`;
 }
 
@@ -37,7 +37,7 @@ export function splitLine(line: string) {
  * configuration file that needs to be read.
  * @returns a parsed JSON object as an Options type.
  */
-export function readConfigFile(path: string) {
+export function readConfigFile(path: string): Options {
   const config = fs.readFileSync(path, "utf8");
 
   return JSON.parse(config) as Options;
@@ -50,7 +50,7 @@ export function readConfigFile(path: string) {
  * `defaultEnvironmentPath` file does not exist. Otherwise, it returns the result of calling the
  * `readConfigFile` function with the `defaultEnvironmentPath` as an argument.
  */
-export function getDefaultConfigFile() {
+export function getDefaultConfigFile(): Options {
   if (!fs.existsSync(defaultEnvironmentPath)) {
     const defaultConfig = {
       env: ".env",
@@ -71,7 +71,7 @@ export function getDefaultConfigFile() {
  * or the contents of the existing file.
  * @returns either the default config file or the contents of the existing config file.
  */
-export function getConfigFile() {
+export function getConfigFile(): Options {
   const configFileExists = fs.existsSync(path.resolve(".envrc"));
   if (!configFileExists) return getDefaultConfigFile();
   return readConfigFile(defaultEnvironmentPath);
@@ -82,7 +82,7 @@ export function getConfigFile() {
  * prefixes, and writes the remaining lines to a new file.
  * @param allArguments - An object that contains all the arguments passed to the function.
  */
-export function writeEnvironment(allArguments: Options) {
+export function writeEnvironment(allArguments: Options): void {
   const configFile = getConfigFile();
 
   const environmentPath = allArguments?.env

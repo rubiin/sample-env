@@ -48,7 +48,7 @@ const allArguments = yargs(hideBin(process.argv))
     },
   }).argv as Options;
 
-export function main() {
+export function main(): void {
   writeEnvironment(allArguments);
 }
 
